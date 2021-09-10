@@ -1,4 +1,4 @@
-/* *************** ES c1 ***************
+/* ************ ES 1 ************
 Scopo di questo esercizio è di scrivere un monitor mbuf che realizzi un buffer limitato dove ogni elemento
 venga inserito con una molteplicità. In particolare mbuf deve fornire le seguenti procedure entry:
 
@@ -13,7 +13,7 @@ Il monitor deve soddisfare i seguenti vincoli:
     • i dati vengono consegnati in ordine FIFO
     • un dato inserito con molteplicità n deve essere ricevuto da n processi: il monitor deve attendere che n processi
         chiamino (o abbiano chiamato) la get e a quel punto restituisce il dato a tutti e toglie l'elemento dal buffer. 
-****************************************** */
+******************************** */
 
 int MAXELEM;
 
@@ -45,9 +45,9 @@ monitor mbuf{
     }
 }
 
-/* *************** ES 2 ***************
- Riscrivere bohm in bohs
-*/
+/* ************ ES 2 ************
+    Riscrivere bohm in bohs
+******************************** */
 
 process bohm[i, i=0,1] {
     for (;;) {
@@ -69,7 +69,6 @@ monitor m:
         state = 1 - state;
         ok[state].signal();
     }
-}
 
 // -----------------------------
 process bohs[i, i=0,1] {

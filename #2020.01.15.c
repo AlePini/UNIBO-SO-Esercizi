@@ -1,4 +1,4 @@
-/* ********* ESERCIZIO c1 *********
+/* ************ ES 1 ************
     Il monitor "semaforo con timeout" semtimeout deve fornire tre procedure entry:
         void V(void)
         boolean P(unsigned int timeout)
@@ -8,7 +8,7 @@
     Se un processo viene riattivato per timeout la P ritorna valore vero, altrimenti falso. Le operazioni V devono riattivare i
     processi in attesa in ordine FIFO.
     Scrivere semtimeout. 
-    ********************************* */
+******************************** */
 
 monitor semtimeout{
     
@@ -55,7 +55,7 @@ monitor semtimeout{
     }
 }
 
-/*  ESERCIZIO c2
+/* ************ ES 2 ************
     Dato un servizio di message passing asincrono scrivere un servizio di message passing sincrono a
     spedizione multipla (senza fare uso di processi server). Devono essere previste due funzioni:
         mulsend(pid_t destination, T msg, int times)
@@ -64,7 +64,7 @@ monitor semtimeout{
     stato ricevuto times volte da destination l'esecuzione della funzione mulsend viene completata.
     Il ricevente può indicare il valore zero come sender nella mulrecv per indicare che vuole ricevere un messaggio da
     qualsiasi mittente.
-*/
+******************************** */
 
 mulsend(pid_t destination, T msg, int times){
     for(int i = 0, i < times; i++){
